@@ -1,0 +1,80 @@
+local ls = require("luasnip")
+local s = ls.snippet
+local sn = ls.snippet_node
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local d = ls.dynamic_node
+local fmt = require("luasnip.extras.fmt").fmt
+local fmta = require("luasnip.extras.fmt").fmta
+local rep = require("luasnip.extras").rep
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
+local tex_utils = {}
+
+tex_utils.in_mathzone = function()
+  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+end
+
+tex_utils.not_in_mathzone = function()
+  return not tex_utils.in_mathzone()
+end
+
+tex_utils.in_env = function(name) -- generic environment detection
+  local is_inside = vim.fn["vimtex#env#is_inside"](name)
+  return (is_inside[1] > 0 and is_inside[2] > 0)
+end
+
+tex_utils.in_tabular = function()
+  return tex_utils.in_env("tabular")
+end
+
+tex_utils.not_in_tabular = function()
+  return not tex_utils.in_tabular()
+end
+
+return {
+  s(
+    {
+      trig = "([%s|%w|%)])nk",
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet",
+      condition = tex_utils.in_tabular,
+    },
+    fmta("<> & <>", { f(function(_, snip)
+      return snip.captures[1]
+    end), i(0) })
+  ),
+  s(
+    { trig = "nl", snippetType = "autosnippet", condition = tex_utils.in_tabular },
+    fmta(
+      [[
+   \\
+   <>
+  ]],
+      { i(0) }
+    )
+  ),
+
+  s(
+    {
+      trig = "([%s])([b-zB-Z])([%s|%,])",
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet",
+      condition = tex_utils.not_in_mathzone and tex_utils.not_in_tabular,
+    },
+    fmta("<>\\(<>\\)<>", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      f(function(_, snip)
+        return snip.captures[2]
+      end),
+      f(function(_, snip)
+        return snip.captures[3]
+      end),
+    })
+  ),
+}

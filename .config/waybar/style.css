@@ -1,0 +1,69 @@
+@define-color background rgba(0, 0, 0, 0.1);
+@define-color text-color rgba(255, 255, 255, 1);
+@define-color background-translucent rgba(0, 0, 0, 0);
+@define-color warn-red rgba(255, 0, 0, 1);
+
+* {
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 13px;
+    /*border-radius: 0px;*/
+    transition: 0s ease-out;
+}
+
+window#waybar {
+    background-color: @background-translucent;
+    color: @text-color;
+    transition-property: background-color;
+    transition: 0s ease-in-out;
+    border-radius: 0px 0px 0px 0px;
+}
+
+window#waybar.empty {
+    /*opacity: 0.0;*/
+    background-color: @background-translucent;
+    transition-duration: 0.5s;
+}
+
+#custom-powerbutton,
+#custom-reboot,
+#window, 
+#cava,
+#network,
+#clock { 
+    margin: 2px;
+    padding: 2px 15px;
+    color: @text-color;
+    background: transparent;
+}
+
+#network.disconnected {
+    background-color: @warn-red;
+}
+
+window#waybar.empty #cava,
+window#waybar.empty #custom-powerbutton,
+window#waybar.empty #network,
+window#waybar.empty #custom-reboot,
+window#waybar.empty #clock {
+    opacity: 0.5;
+    transition-duration: 3s;
+}
+
+window#waybar.zen {
+  background-color: rgba(18, 18, 18, 1);
+  transition-duration: 0s
+}
+
+window#waybar.vesktop {
+  background-color: rgba(50, 51, 57, 1);
+  transition-duration: 0s
+}
+
+window#waybar.obsidian {
+  background-color: rgba(38, 38, 38, 1);
+  transition-duration: 0s
+}
+
+#cava.silent {
+  transition-duration: 0.5s;
+}
