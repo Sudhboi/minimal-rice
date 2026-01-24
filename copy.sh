@@ -4,8 +4,8 @@ function copydir() {
     cp -r ~/.config/$1 $DOTFILES/.config 2>>"/home/sudhirk/.backups/log.txt"
 }
 
-copydir niri
 copydir hypr
+copydir niri
 copydir kitty
 copydir nvim
 copydir waybar
@@ -14,7 +14,7 @@ cp ~/.zshrc $DOTFILES/.config
 
 cd $DOTFILES
 
-echo "\nPull? (Y/n)"
+echo "Pull? (Y/n)"
 read pull
 
 if [ "$pull" != "n" ]; then
@@ -22,3 +22,5 @@ if [ "$pull" != "n" ]; then
 fi
 
 lazygit
+
+cd ~
