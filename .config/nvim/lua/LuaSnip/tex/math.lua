@@ -78,6 +78,23 @@ local basicSnippets = {
 
   -- More Operations
   { "cdot", "\\cdot" },
+
+  -- Equality
+  { "===", "\\equiv" },
+  { "!=", "\\neq" },
+  { ">=", "\\geq" },
+  { "<=", "\\leq" },
+  { "<<", "\\ll" },
+  { ">>", "\\gg" },
+  { "simm", "\\sim" },
+  { "sim=", "\\simeq" },
+  { "prop", "\\propto" },
+
+  -- Set Operations
+  { "inter", "\\cap" },
+  { "union", "\\cup" },
+  { "inn", "\\in" },
+  { "notin", "\\not\\in" },
 }
 
 local interactiveSnippets = {
@@ -96,6 +113,15 @@ local interactiveSnippets = {
 
   { "bf", "\\mathbf{<>}", { i(1) } },
   { "rm", "\\mathrm{<>}", { i(1) } },
+  { "bb", "\\mathbb{<>}", { i(1) } },
+
+  -- Set Operations
+  { "set", "\\{ <> \\}", { i(1) } },
+
+  -- Geometry
+  { "ol", "\\overline{<>}", { i(1) } },
+  { "o->", "\\overrightarrow{<>}", { i(1) }, 1001 },
+  { "o<->", "\\overleftrightarrow{<>}", { i(1) }, 1002 },
 }
 
 local snippets = {}

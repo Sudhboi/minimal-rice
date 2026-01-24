@@ -1,4 +1,4 @@
-@define-color background rgba(0, 0, 0, 0.1);
+@define-color background rgba(46, 52, 64, 1);
 @define-color text-color rgba(255, 255, 255, 1);
 @define-color background-translucent rgba(0, 0, 0, 0);
 @define-color warn-red rgba(255, 0, 0, 1);
@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-    background-color: @background-translucent;
+    background-color: @background;
     color: @text-color;
     transition-property: background-color;
     transition: 0s ease-in-out;
@@ -21,7 +21,7 @@ window#waybar {
 window#waybar.empty {
     /*opacity: 0.0;*/
     background-color: @background-translucent;
-    transition-duration: 0.5s;
+    transition-duration: 0s;
 }
 
 #custom-powerbutton,

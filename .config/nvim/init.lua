@@ -15,7 +15,7 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 
 vim.cmd([[
     " Expand or jump in insert mode
-    imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : 'jk' 
+    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 
     " Jump forward through tabstops in visual mode
     smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'

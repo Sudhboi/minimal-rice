@@ -109,7 +109,7 @@ input {
 
 output "eDP-1" {
     mode "2880x1800@120.000"
-    scale 1.75
+    scale 1.70
     variable-refresh-rate
 }
 
@@ -119,7 +119,7 @@ output "eDP-1" {
 layout {
     // Set gaps around windows in logical pixels.
     gaps 0
-    background-color "#2e3440"
+    background-color "transparent"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -205,7 +205,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 1
+        width 0
         active-color "#ffffff"
         inactive-color "#888888"
 
@@ -281,6 +281,7 @@ spawn-at-startup "waybar"
 spawn-sh-at-startup "python3 ~/.config/niri/niri_tile_to_n.py"
 spawn-at-startup "swaync"
 spawn-at-startup "hypridle"
+spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpaper.jpg"
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -385,6 +386,7 @@ binds {
     Mod+W hotkey-overlay-title="Open Whatsapp" { spawn-sh "xdg-open 'https://web.whatsapp.com'"; }
     Mod+F5 { spawn-sh "pkill hypridle || hypridle"; }
     Super+Shift+W { spawn-sh "pkill waybar || waybar"; }
+    Super+Shift+F4 { spawn-sh "pkill swaybg || swaybg -i ~/Pictures/Wallpaper.jpg"; }
     Mod+F7 hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+F12 { spawn-sh "poweroff"; }
 
@@ -654,4 +656,9 @@ overview {
 
 cursor {
     hide-after-inactive-ms 5000
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
