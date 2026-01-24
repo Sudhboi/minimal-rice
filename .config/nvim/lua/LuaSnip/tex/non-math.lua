@@ -33,6 +33,18 @@ tex_utils.not_in_tabular = function()
   return not tex_utils.in_tabular()
 end
 
+tex_utils.in_enumerate = function()
+  return tex_utils.in_env("enumerate")
+end
+
+tex_utils.in_itemize = function()
+  return tex_utils.in_env("itemize")
+end
+
+tex_utils.in_itemizeable = function()
+  return tex_utils.in_enumerate() or tex_utils.in_itemize()
+end
+
 return {
   s(
     {
@@ -57,6 +69,8 @@ return {
     )
   ),
 
+  s({ trig = "it", condition = tex_utils.in_itemizeable }, t("\\item")),
+  --[[
   s(
     {
       trig = "([%s])([b-zB-Z])([%s|%,])",
@@ -76,5 +90,5 @@ return {
         return snip.captures[3]
       end),
     })
-  ),
+--]]
 }
