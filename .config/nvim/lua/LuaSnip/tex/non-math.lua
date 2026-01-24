@@ -46,18 +46,12 @@ tex_utils.in_itemizeable = function()
 end
 
 return {
-  s(
-    {
-      trig = "([%s|%w|%)])nk",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet",
-      condition = tex_utils.in_tabular,
-    },
-    fmta("<> & <>", { f(function(_, snip)
-      return snip.captures[1]
-    end), i(0) })
-  ),
+  s({
+    trig = "nk",
+    wordTrig = false,
+    snippetType = "autosnippet",
+    condition = tex_utils.in_tabular,
+  }, t("&")),
   s(
     { trig = "nl", snippetType = "autosnippet", condition = tex_utils.in_tabular },
     fmta(

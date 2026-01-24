@@ -14,10 +14,98 @@ local in_mathzone = function()
   return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
-return {
-  s({ trig = "ff", snippetType = "autosnippet", condition = in_mathzone }, fmta("\\frac{<>}{<>}", { i(1), i(2) })),
-  s({ trig = "not", snippetType = "autosnippet", condition = in_mathzone }, t("\\lnot ")),
-  s({ trig = "and", snippetType = "autosnippet", condition = in_mathzone }, t("\\land ")),
-  s({ trig = "or", snippetType = "autosnippet", condition = in_mathzone }, t("\\lor ")),
-  s({ trig = "->", snippetType = "autosnippet", condition = in_mathzone }, t("\\to ")),
+local basicSnippet = function(trigText, repText, priorityNum)
+  return s(
+    { trig = trigText, snippetType = "autosnippet", wordTrig = false, condition = in_mathzone, priority = priorityNum },
+    t(repText)
+  )
+end
+
+local interactiveSnippet = function(trigText, repForm, subs, priorityNum)
+  return s(
+    { trig = trigText, snippetType = "autosnippet", wordTrig = false, condition = in_mathzone, priority = priorityNum },
+    fmta(repForm, subs)
+  )
+end
+
+local basicSnippets = {
+
+  -- Greek Letters
+  { "@a", "\\alpha" },
+  { "@b", "\\beta" },
+  { "@g", "\\gamma" },
+  { "@G", "\\Gamma" },
+  { "@d", "\\delta" },
+  { "@D", "\\Delta" },
+  { "@e", "\\epsilon" },
+  { ":e", "\\varepsilon" },
+  { "@z", "\\zeta" },
+  { "@t", "\\theta" },
+  { "@T", "\\Theta" },
+  { ":t", "\\vartheta" },
+  { "@i", "\\iota" },
+  { "@k", "\\kappa" },
+  { "@l", "\\lambda" },
+  { "@L", "\\Lambda" },
+  { "@s", "\\sigma" },
+  { "@S", "\\Sigma" },
+  { "@u", "\\upsilon" },
+  { "@U", "\\Upsilon" },
+  { "@o", "\\omega" },
+  { "@O", "\\Omega" },
+
+  -- Logic
+  { "not", "\\lnot" },
+  { "and", "\\land" },
+  { "or", "\\lor" },
+  { "->", "\\to" },
+  { "<->", "\\leftrightarrow", 1001 },
+  { "!>", "\\mapsto" },
+  { "=>", "\\implies" },
+  { "=<", "\\impliedby" },
+
+  -- Basic Operations
+  { "sr", "^{2}" },
+  { "cb", "^{3}" },
+  { "invs", "^{-1}" },
+
+  { "conj", "^{*}" },
+  { "Re", "\\mathrm{Re}" },
+  { "Im", "\\mathrm{Im}" },
+
+  -- Linear Algebra
+  { "trace", "\\mathrm{Tr}" },
+
+  -- More Operations
+  { "cdot", "\\cdot" },
 }
+
+local interactiveSnippets = {
+
+  -- Text Environment
+  { "text", "\\text{<>}", { i(1) } },
+  { '"', "\\text{<>}", { i(1) } },
+
+  -- Basic Operations
+  { "rd", "^{<>}", { i(1) } },
+  { "_", "_{<>}", { i(1) } },
+  { "sts", "_\\text{<>}", { i(1) } },
+  { "sq", "\\sqrt{ <> }", { i(1) } },
+  { "//", "\\frac{<>}{<>}", { i(1), i(2) } },
+  { "ee", "e^{ <> }", { i(1) } },
+
+  { "bf", "\\mathbf{<>}", { i(1) } },
+  { "rm", "\\mathrm{<>}", { i(1) } },
+}
+
+local snippets = {}
+
+for _, pair in ipairs(basicSnippets) do
+  table.insert(snippets, basicSnippet(pair[1], pair[2], (#pair >= 3 and pair[3] or 1000)))
+end
+
+for _, pair in ipairs(interactiveSnippets) do
+  table.insert(snippets, interactiveSnippet(pair[1], pair[2], pair[3], (#pair >= 4 and pair[4] or 1000)))
+end
+
+return snippets

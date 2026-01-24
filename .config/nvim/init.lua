@@ -10,6 +10,7 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
   --store_selection_keys = "<Tab>",
 
   update_events = "TextChanged,TextChangedI",
+  link_roots = false,
 })
 
 vim.cmd([[
