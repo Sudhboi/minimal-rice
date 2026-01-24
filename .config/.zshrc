@@ -10,6 +10,7 @@ alias q="exit"
 alias lg="lazygit"
 alias n="nvim"
 alias bat-info="cat /sys/class/power_supply/BAT0/uevent"
+alias dt="~/.backups/dotfiles/copy.sh"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
