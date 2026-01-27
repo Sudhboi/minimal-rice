@@ -17,11 +17,11 @@ return {
     { trig = "env", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
-    \begin{<>}
+    \begin{<>}<>
         <>
     \end{<>}
     ]],
-      { i(1), i(2), rep(1) }
+      { i(1), i(2), i(3), rep(1) }
     )
   ),
   s(

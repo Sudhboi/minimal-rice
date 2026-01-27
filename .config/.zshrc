@@ -15,8 +15,6 @@ alias dt="~/.backups/dotfiles/copy.sh"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
 
 function yo() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -45,3 +43,7 @@ function acp() {
     git push
 }
 
+#cat ~/sudhir.txt
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

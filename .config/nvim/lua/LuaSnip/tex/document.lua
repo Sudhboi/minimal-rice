@@ -38,4 +38,19 @@ return {
   ),
 
   s({ trig = "assign" }, fmta("<> Assignment \\#<>", { i(1), i(0) })),
+
+  s(
+    { trig = "make_image" },
+    fmta(
+      [[
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=<>\linewidth]{<>}
+    \caption{<>}
+    \label{fig:<>}
+\end{figure}
+]],
+      { i(2, "0.75"), i(1), i(3, "Enter Caption Here"), i(4, "placeholder") }
+    )
+  ),
 }

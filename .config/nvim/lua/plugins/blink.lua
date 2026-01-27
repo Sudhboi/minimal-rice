@@ -1,9 +1,8 @@
 return {
   "saghen/blink.cmp",
-  lazy = false,
   -- Make blink.cmp toogleable
   opts = function(_, opts)
-    vim.b.completion = true
+    vim.b.completion = false
 
     Snacks.toggle({
       name = "Completion",
@@ -18,11 +17,7 @@ return {
     opts.enabled = function()
       return vim.b.completion ~= false
     end
+
     return opts
   end,
-  opts = {
-    snippets = {
-      preset = "luasnip",
-    },
-  },
 }

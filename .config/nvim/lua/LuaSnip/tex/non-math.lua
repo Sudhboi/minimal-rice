@@ -45,6 +45,10 @@ tex_utils.in_itemizeable = function()
   return tex_utils.in_enumerate() or tex_utils.in_itemize()
 end
 
+tex_utils.in_align = function()
+  return tex_utils.in_env("align")
+end
+
 return {
   s({
     trig = "nk",
@@ -52,6 +56,14 @@ return {
     snippetType = "autosnippet",
     condition = tex_utils.in_tabular,
   }, t("&")),
+
+  s({
+    trig = "=",
+    wordTrig = false,
+    snippetType = "autosnippet",
+    condition = tex_utils.in_align,
+  }, t("&=")),
+
   s(
     { trig = "nl", snippetType = "autosnippet", condition = tex_utils.in_tabular },
     fmta(

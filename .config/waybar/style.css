@@ -26,6 +26,7 @@ window#waybar.empty {
 
 #custom-powerbutton,
 #custom-reboot,
+#battery,
 #window, 
 #cava,
 #network,
@@ -36,6 +37,11 @@ window#waybar.empty {
     background: transparent;
 }
 
+#battery,
+#custom-powerbutton {
+    color: transparent;
+}
+
 #network.disconnected {
     background-color: @warn-red;
 }
@@ -43,10 +49,11 @@ window#waybar.empty {
 window#waybar.empty #cava,
 window#waybar.empty #custom-powerbutton,
 window#waybar.empty #network,
+window#waybar.empty #battery,
 window#waybar.empty #custom-reboot,
 window#waybar.empty #clock {
     opacity: 0.5;
-    transition-duration: 3s;
+    transition-duration: 0s;
 }
 
 window#waybar.zen {
@@ -66,4 +73,9 @@ window#waybar.obsidian {
 
 #cava.silent {
   transition-duration: 0.5s;
+}
+
+window#waybar.empty #battery,
+window#waybar.empty #custom-powerbutton {
+    color: @text-color;
 }
