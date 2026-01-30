@@ -1,23 +1,10 @@
 return {
-  "saghen/blink.cmp",
-  -- Make blink.cmp toogleable
-  opts = function(_, opts)
-    vim.b.completion = false
-
-    Snacks.toggle({
-      name = "Completion",
-      get = function()
-        return vim.b.completion
+  {
+    "saghen/blink.cmp",
+    opts = {
+      enabled = function()
+        return vim.tbl_contains({ "tex", "lean", "lua" }, vim.bo.filetype)
       end,
-      set = function(state)
-        vim.b.completion = state
-      end,
-    }):map("<leader>uk")
-
-    opts.enabled = function()
-      return vim.b.completion ~= false
-    end
-
-    return opts
-  end,
+    },
+  },
 }

@@ -39,7 +39,7 @@ window#waybar.empty {
 
 #battery,
 #custom-powerbutton {
-    color: transparent;
+    font-size: 0px
 }
 
 #network.disconnected {
@@ -77,5 +77,6 @@ window#waybar.obsidian {
 
 window#waybar.empty #battery,
 window#waybar.empty #custom-powerbutton {
-    color: @text-color;
+    font-size: 13px;
+    transition-duration: 0.4s;
 }

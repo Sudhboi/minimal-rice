@@ -21,7 +21,7 @@ return {
         <>
     \end{<>}
     ]],
-      { i(1), i(2), i(3), rep(1) }
+      { i(1), i(2), i(0), rep(1) }
     )
   ),
   s(
@@ -35,6 +35,17 @@ return {
     \end{center}
     ]],
       { i(1, "c|c"), i(2) }
+    )
+  ),
+  s(
+    { trig = "make_codeblock", condition = line_begin },
+    fmta(
+      [[
+    \begin{minted}[breaklines]{<>}
+        <>
+    \end{minted}
+    ]],
+      { i(1), i(0) }
     )
   ),
 }

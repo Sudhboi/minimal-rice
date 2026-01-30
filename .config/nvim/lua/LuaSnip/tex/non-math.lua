@@ -57,13 +57,6 @@ return {
     condition = tex_utils.in_tabular,
   }, t("&")),
 
-  s({
-    trig = "=",
-    wordTrig = false,
-    snippetType = "autosnippet",
-    condition = tex_utils.in_align,
-  }, t("&=")),
-
   s(
     { trig = "nl", snippetType = "autosnippet", condition = tex_utils.in_tabular },
     fmta(
@@ -76,25 +69,26 @@ return {
   ),
 
   s({ trig = "it", condition = tex_utils.in_itemizeable }, t("\\item")),
-  --[[
-  s(
-    {
-      trig = "([%s])([b-zB-Z])([%s|%,])",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet",
-      condition = tex_utils.not_in_mathzone and tex_utils.not_in_tabular,
-    },
-    fmta("<>\\(<>\\)<>", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      f(function(_, snip)
-        return snip.captures[2]
-      end),
-      f(function(_, snip)
-        return snip.captures[3]
-      end),
-    })
---]]
+  s({
+    trig = "(.*)(^|\\s)([b-zB-Z])(\\s|,)",
+    trigEngine = "ecma",
+    snippetType = "autosnippet",
+    condition = function()
+      return (tex_utils.not_in_mathzone() and tex_utils.not_in_tabular())
+    end,
+  }, {
+    f(function(_, snip)
+      return (snip.captures[1] .. snip.captures[2] .. "$" .. snip.captures[3] .. "$" .. snip.captures[4])
+    end),
+  }),
 }
+
+--[[
+  s({
+    trig = "=",
+    wordTrig = true,
+    snippetType = "autosnippet",
+    condition = tex_utils.in_align,
+  }, t("&=")),
+]]
+--

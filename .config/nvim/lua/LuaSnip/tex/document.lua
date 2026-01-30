@@ -37,7 +37,7 @@ return {
     )
   ),
 
-  s({ trig = "assign" }, fmta("<> Assignment \\#<>", { i(1), i(0) })),
+  s({ trig = "assign" }, fmta("<> Assignment <>", { i(1), i(0) })),
 
   s(
     { trig = "make_image" },

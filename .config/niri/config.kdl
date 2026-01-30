@@ -276,7 +276,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "swaylock"
+spawn-at-startup "swaylock"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "python3 ~/.config/niri/niri_tile_to_n.py"
 spawn-at-startup "swaync"

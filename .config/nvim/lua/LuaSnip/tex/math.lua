@@ -95,13 +95,14 @@ local basicSnippets = {
   { "union", "\\cup" },
   { "inn", "\\in" },
   { "notin", "\\not\\in" },
+  { "eset", "\\emptyset", 1001 },
 }
 
 local interactiveSnippets = {
 
   -- Text Environment
   { "text", "\\text{<>}", { i(1) } },
-  { '"', "\\text{<>}", { i(1) } },
+  { '""', "\\text{<>}", { i(1) } },
 
   -- Basic Operations
   { "rd", "^{<>}", { i(1) } },
