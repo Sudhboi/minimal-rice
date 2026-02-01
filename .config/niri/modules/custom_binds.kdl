@@ -1,0 +1,19 @@
+binds {
+
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Z hotkey-overlay-title="Open a Browser: zen-browser" { spawn "zen-browser"; }
+    Mod+D hotkey-overlay-title="Run an Application: vesktop" { spawn "vesktop"; }
+    Mod+N hotkey-overlay-title="Open Notification Centre" { spawn-sh "swaync-client -t"; }
+    F12 hotkey-overlay-title="Open btop" { spawn-sh "kitty btop"; }
+    Mod+Y hotkey-overlay-title="Open Yazi in Kitty" { spawn-sh "~/.scripts/yazi"; }
+    Mod+A hotkey-overlay-title="Open Obsidian" { spawn-sh "obsidian"; }
+    Mod+E hotkey-overlay-title="Open Emacs" { spawn-sh "emacs"; }
+    Mod+W hotkey-overlay-title="Open Whatsapp" { spawn-sh "xdg-open 'https://web.whatsapp.com'"; }
+    F5 { spawn-sh "(pkill hypridle && notify-send 'Disabled Hypridle') || (hypridle & notify-send 'Enabled Hypridle')"; }
+    Super+Shift+W { spawn-sh "(pkill waybar && notify-send 'Disabled Waybar') || (waybar & notify-send 'Enabled Waybar')"; }
+    F4 { spawn-sh "pkill swaybg || swaybg -i ~/Pictures/Wallpaper.jpg"; }
+    F7 hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Shift+F12 { spawn-sh "poweroff"; }
+    Mod+Space {spawn-sh "vicinae toggle"; }
+
+}

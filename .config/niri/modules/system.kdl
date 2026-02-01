@@ -1,0 +1,13 @@
+input {
+    touchpad {
+        tap
+        natural-scroll
+        scroll-factor 0.4
+    }
+}
+
+output "eDP-1" {
+    mode "2880x1800@120.000"
+    scale 1.7
+    variable-refresh-rate
+}

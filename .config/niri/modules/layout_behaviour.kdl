@@ -1,0 +1,37 @@
+layout {
+    gaps 0
+    background-color "transparent"
+
+    focus-ring { off; }
+    border { off; }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+window-rule {
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+    backdrop-color "#000000"
+}
+
+cursor {
+    hide-after-inactive-ms 5000
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
