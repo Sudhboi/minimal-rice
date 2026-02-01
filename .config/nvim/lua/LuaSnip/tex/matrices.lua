@@ -55,11 +55,11 @@ return {
     d(1, function(_, snip)
       print("a")
       local aug = snip.captures[1] == "a"
-      local columns = snip.captures[2]
-      local rows = snip.captures[3]
+      local columns = snip.captures[3]
+      local rows = snip.captures[2]
       local nodes = {}
       local index = 1
-      table.insert(nodes, t({ "\\left[", "\\begin{array}{" }))
+      table.insert(nodes, t({ "\\left[\\begin{array}{" }))
       if aug then
         table.insert(nodes, t(string.rep("c", columns - 1) .. "|c"))
       else
@@ -74,14 +74,14 @@ return {
             index = index + 1
             first_of_row = false
           else
-            table.insert(nodes, t("&"))
+            table.insert(nodes, t(" & "))
             table.insert(nodes, i(index))
             index = index + 1
           end
         end
         table.insert(nodes, t({ "\\\\", "" }))
       end
-      table.insert(nodes, t({ "\\end{array}", "\\right]", "" }))
+      table.insert(nodes, t({ "\\end{array}\\right]", "" }))
       return sn(nil, nodes)
     end),
   }),

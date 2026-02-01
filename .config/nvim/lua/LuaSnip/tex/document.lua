@@ -53,4 +53,17 @@ return {
       { i(2, "0.75"), i(1), i(3, "Enter Caption Here"), i(4, "placeholder") }
     )
   ),
+  s(
+    { trig = "add_colors_catppuccin" },
+    fmta(
+      [[
+\usepackage{xcolor}
+\definecolor{catppuccin-background}{RGB}{239, 241, 245}
+\definecolor{catppuccin-text}{RGB}{17, 17, 27}
+\pagecolor{catppuccin-background}
+\color{catppuccin-text}<>
+    ]],
+      { i(0) }
+    )
+  ),
 }

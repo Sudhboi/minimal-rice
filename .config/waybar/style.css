@@ -1,4 +1,4 @@
-@define-color background rgba(46, 52, 64, 1);
+@define-color background rgba(46, 52, 64, 0.98);
 @define-color text-color rgba(255, 255, 255, 1);
 @define-color background-translucent rgba(0, 0, 0, 0);
 @define-color warn-red rgba(255, 0, 0, 1);
@@ -63,6 +63,11 @@ window#waybar.zen {
 
 window#waybar.vesktop {
   background-color: rgba(50, 51, 57, 1);
+  transition-duration: 0s
+}
+
+window#waybar.emacs {
+  background-color: rgba(33, 36, 43, 1);
   transition-duration: 0s
 }
 
