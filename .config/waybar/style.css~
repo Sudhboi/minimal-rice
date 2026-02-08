@@ -66,6 +66,11 @@ window#waybar.vesktop {
   transition-duration: 0s
 }
 
+window#waybar.emacs {
+  background-color: rgba(36, 39, 58, 1);
+  transition-duration: 0s
+}
+
 window#waybar.obsidian {
   background-color: rgba(38, 38, 38, 1);
   transition-duration: 0s

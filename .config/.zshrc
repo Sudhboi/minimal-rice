@@ -15,7 +15,7 @@ alias bruh="python3 ~/.bruh/bruh.py"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.clones/loogle/.lake/build/bin:$PATH"
 
 
 function yo() {

@@ -68,7 +68,9 @@ return {
     )
   ),
 
-  s({ trig = "it", condition = tex_utils.in_itemizeable }, t("\\item")),
+  s({
+    trig = "it",
+  }, t("\\item")),
   s({
     trig = "(.*)(^|\\s)([b-zB-Z])(\\s|,)",
     trigEngine = "ecma",

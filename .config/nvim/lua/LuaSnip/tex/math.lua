@@ -96,6 +96,9 @@ local basicSnippets = {
   { "inn", "\\in" },
   { "notin", "\\not\\in" },
   { "eset", "\\emptyset", 1001 },
+
+  -- Geometry
+  { "ang", "\\angle " },
 }
 
 local interactiveSnippets = {
