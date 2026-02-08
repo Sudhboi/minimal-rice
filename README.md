@@ -1,11 +1,12 @@
 # Minimalist Niri Rice 
 
 Very minimal catppuccin-adjacent rice. Screw OLEDs.
+
 Inspired by [Gilles Castel](https://castel.dev/post/lecture-notes-1/)
 
 ## Screenshots
 
-![General](screenshots/General.png)
+![General](screenshots/Better_General.png)
 
 ![LaTeX](screenshots/latex.png)
 
