@@ -23,7 +23,7 @@ overview {
     workspace-shadow {
         off
     }
-    backdrop-color "#2e3440"
+    backdrop-color "transparent"
 }
 
 cursor {

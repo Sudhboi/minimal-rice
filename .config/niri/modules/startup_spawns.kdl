@@ -1,4 +1,4 @@
-//spawn-at-startup "swaylock"
+spawn-sh-at-startup "sleep 2 && hyprlock --grace 10"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "python3 ~/.config/niri/scripts/niri_tile_to_n.py"
 spawn-at-startup "swaync"

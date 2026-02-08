@@ -12,7 +12,7 @@ binds {
     F5 { spawn-sh "(pkill hypridle && notify-send 'Disabled Hypridle') || (hypridle & notify-send 'Enabled Hypridle')"; }
     Super+Shift+W { spawn-sh "(pkill waybar && notify-send 'Disabled Waybar') || (waybar & notify-send 'Enabled Waybar')"; }
     F4 { spawn-sh "pkill swaybg || swaybg -i ~/Pictures/Wallpaper.jpg"; }
-    F7 hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    F7 hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Shift+F12 { spawn-sh "poweroff"; }
     Mod+Space {spawn-sh "vicinae toggle"; }
 

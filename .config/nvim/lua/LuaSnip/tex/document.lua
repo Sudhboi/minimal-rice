@@ -66,4 +66,14 @@ return {
       { i(0) }
     )
   ),
+  s(
+    { trig = "import_minted" },
+    fmta(
+      [[
+\usepackage{minted}
+\usemintedstyle{catppuccin-latte}<>
+    ]],
+      { i(0) }
+    )
+  ),
 }
