@@ -1,0 +1,85 @@
+# Theming
+font: Iosevka Term 12
+background: "#1e1e2e"
+color: "#cdd6f4"
+border: "#b4befe"
+separator: " -> "
+border_width: 2
+corner_r: 0
+padding: 15 # Defaults to corner_r
+rows_per_column: 5 # No limit by default
+column_padding: 25 # Defaults to padding
+
+# Anchor and margin
+anchor: bottom-left # One of center, left, right, top, bottom, bottom-left, top-left, etc.
+# Only relevant when anchor is not center
+margin_right: 0
+margin_bottom: 10
+margin_left: 10
+margin_top: 0
+
+# Permits key bindings that conflict with compositor key bindings.
+# Default is `false`.
+inhibit_compositor_keyboard_shortcuts: true
+
+# Try to guess the correct keyboard layout to use. Default is `false`.
+auto_kbd_layout: true
+
+menu:
+  - key: "p"
+    desc: "Power Menu"
+    submenu:
+      - key: "s"
+        desc: "Sleep"
+        cmd: systemctl suspend
+      - key: "r"
+        desc: "Reboot"
+        cmd: reboot
+      - key: "p"
+        desc: "Poweroff"
+        cmd: poweroff
+      - key: "q"
+        desc: "Quit"
+        cmd: ""
+  - key: "s"
+    desc: "Sidebar"
+    submenu:
+      - key: "s"
+        desc: "Sidebar: Toggle Window"
+        cmd: "/usr/bin/niri-sidebar toggle-window"
+      - key: "t"
+        desc: "Sidebar: Toggle Visiblity"
+        cmd: "/usr/bin/niri-sidebar toggle-visibility"
+      - key: "f"
+        desc: "Sidebar: Flip Windows"
+        cmd: "/usr/bin/niri-sidebar flip"
+      - key: "r"
+        desc: "Sidebar: Reorder"
+        cmd: "/usr/bin/niri-sidebar reorder"
+      - key: "q"
+        desc: "Quit"
+        cmd: ""
+  - key: "t"
+    desc: "Kitty"
+    cmd: kitty
+  - key: "y"
+    desc: "Yazi"
+    submenu:
+      - key: "y"
+        desc: "Yazi"
+        cmd: "kitty -e zsh -c \"source ~/.zshrc && y; exec zsh\""
+      - key: "c"
+        desc: "Yazi: Open Config Files"
+        cmd: "kitty -e zsh -c \"source ~/.zshrc && y ~/.config; exec zsh\""
+      - key: "p"
+        desc: "Yazi: Open Programming Folder"
+        cmd: "kitty -e zsh -c \"source ~/.zshrc && y ~/Programming; exec zsh\""
+      - key: "l"
+        desc: "Yazi: Open LaTeX Folder"
+        cmd: "kitty -e zsh -c \"source ~/.zshrc && y ~/LaTeX; exec zsh\""
+      - key: "q"
+        desc: "Quit"
+        cmd: ""
+  - key: "q"
+    desc: "Quit"
+    cmd: ""

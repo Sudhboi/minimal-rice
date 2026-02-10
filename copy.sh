@@ -9,6 +9,7 @@ copydir niri
 copydir kitty
 copydir nvim
 copydir waybar
+copydir wlr-which-key
 
 cp ~/.zshrc $DOTFILES/.config
 

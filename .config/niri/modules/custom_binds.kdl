@@ -16,4 +16,6 @@ binds {
     Mod+Shift+F12 { spawn-sh "poweroff"; }
     Mod+Space {spawn-sh "vicinae toggle"; }
 
+    Mod+P { spawn-sh "kitty paru & (sleep 0.3 && /usr/bin/niri-sidebar toggle-window)"; }
+    Ctrl+Space { spawn-sh "wlr-which-key"; }
 }
