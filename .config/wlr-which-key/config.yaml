@@ -1,17 +1,17 @@
 # Theming
 font: Iosevka Term 12
-background: "#1e1e2e"
+background: "#1e1e2eee"
 color: "#cdd6f4"
 border: "#b4befe"
-separator: " -> "
-border_width: 2
+separator: " 󰜶 "
+border_width: 1
 corner_r: 0
 padding: 15 # Defaults to corner_r
 rows_per_column: 5 # No limit by default
 column_padding: 25 # Defaults to padding
 
 # Anchor and margin
-anchor: bottom-left # One of center, left, right, top, bottom, bottom-left, top-left, etc.
+anchor: bottom # One of center, left, right, top, bottom, bottom-left, top-left, etc.
 # Only relevant when anchor is not center
 margin_right: 0
 margin_bottom: 10
@@ -59,9 +59,6 @@ menu:
       - key: "p"
         desc: "Programming"
         cmd: "kitty -e zsh -c \"source ~/.zshrc && y ~/Programming; exec zsh\""
-      - key: "b"
-        desc: "Books"
-        cmd: "kitty -e zsh -c \"source ~/.zshrc && y ~/Books; exec zsh\""
       - key: "L"
         desc: "Lean"
         cmd: "kitty -e zsh -c \"source ~/.zshrc && y my-mil-lean; exec zsh\""
@@ -71,9 +68,6 @@ menu:
       - key: "q"
         desc: "Quit"
         cmd: ""
-  - key: "z"
-    desc: "Zen Browser"
-    cmd: "zen-browser"
   - key: "o"
     desc: "Obsidian"
     submenu:
@@ -89,9 +83,33 @@ menu:
   - key: "d"
     desc: "Vesktop"
     cmd: "vesktop"
+  - key: "D"
+    desc: "Discordo"
+    cmd: "kitty discordo & (sleep 0.3 && /usr/bin/niri-sidebar toggle-window)"
+  - key: "n"
+    desc: "Notification"
+    submenu:
+      - key: "t"
+        desc: "Toggle SwayNC Panel"
+        cmd: "swaync-client -t"
+      - key: "d"
+        desc: "Toggle DND"
+        cmd: "swaync-client -d && notify-send \"DND Enabled: $(swaync-client -D)\""
+  - key: "g"
+    desc: "Games"
+    submenu:
+      - key: "h"
+        desc: "Heroic Games"
+        cmd: "heroic"
+      - key: "s"
+        desc: "Steam"
+        cmd: "steam"
   - key: "e"
     desc: "Emacs"
     cmd: "emacs"
+  - key: "b"
+    desc: "Books"
+    cmd: "xdg-open $(find ~/Books -name '*.pdf' | vicinae dmenu -p 'Select Book...')"
   - key: "s"
     desc: "System"
     submenu: 
@@ -107,6 +125,9 @@ menu:
       - key: "q"
         desc: "Quit"
         cmd: ""
+  - key: "z"
+    desc: "Zen Browser"
+    cmd: "zen-browser"
   - key: "i"
     desc: "Internet"
     submenu: 
@@ -119,9 +140,21 @@ menu:
       - key: "y"
         desc: "Youtube"
         cmd: "xdg-open \"https://www.youtube.com/\""
+      - key: "r"
+        desc: "Reddit"
+        cmd: "xdg-open \"https://www.reddit.com/\""
+      - key: "o"
+        desc: "Outlook"
+        cmd: "xdg-open \"https://outlook.cloud.microsoft/mail/\""
+      - key: "L"
+        desc: "Loogle"
+        cmd: "xdg-open \"https://loogle.lean-lang.org/\""
       - key: "q"
         desc: "Quit"
         cmd: ""
+  - key: "P"
+    desc: "Paru"
+    cmd: "kitty paru & (sleep 0.3 && /usr/bin/niri-sidebar toggle-window)"
   - key: "q"
     desc: "Quit"
     cmd: ""

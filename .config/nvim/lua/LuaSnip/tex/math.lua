@@ -53,6 +53,7 @@ local basicSnippets = {
   { "@U", "\\Upsilon" },
   { "@o", "\\omega" },
   { "@O", "\\Omega" },
+  { "mu", "\\mu" },
 
   -- Logic
   { "not", "\\lnot" },
@@ -99,6 +100,9 @@ local basicSnippets = {
 
   -- Geometry
   { "ang", "\\angle " },
+  { "ell", "\\ell" },
+  { "prp", "\\perp" },
+  { "deg", "\\degree" },
 }
 
 local interactiveSnippets = {

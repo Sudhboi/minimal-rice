@@ -24,6 +24,7 @@ return {
   ),
   s({ trig = "@p", snippetType = "autosnippet" }, t("@param ")),
   s({ trig = "@r", snippetType = "autosnippet" }, t("@return ")),
+  s({ trig = "@t", snippetType = "autosnippet" }, t("@throws ")),
   s({ trig = "@a", snippetType = "autosnippet" }, t("@author Sudhir Krisna, 3796941")),
   s({ trig = "psvm", snippetType = "autosnippet" }, fmta("public static void main (String[] args) {<>}", { i(0) })),
 }

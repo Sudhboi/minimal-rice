@@ -14,7 +14,7 @@ return {
   s({ trig = "dm", snippetType = "autosnippet" }, fmta("\\[ <> \\]", { i(1) })),
   s({ trig = "mk", snippetType = "autosnippet" }, fmta("\\(<>\\)", { i(1) })),
   s(
-    { trig = "env", snippetType = "autosnippet", condition = line_begin },
+    { trig = "\\be", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
     \begin{<>}<>

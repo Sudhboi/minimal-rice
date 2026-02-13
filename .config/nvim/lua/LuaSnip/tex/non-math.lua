@@ -57,6 +57,12 @@ return {
     condition = tex_utils.in_tabular,
   }, t("&")),
 
+  s({
+    trig = "ell",
+    wordTrig = true,
+    snippetType = "autosnippet",
+  }, t("\\(\\ell\\)")),
+
   s(
     { trig = "nl", snippetType = "autosnippet", condition = tex_utils.in_tabular },
     fmta(
@@ -71,6 +77,7 @@ return {
   s({
     trig = "it",
   }, t("\\item")),
+
   s({
     trig = "(.*)(^|\\s)([b-zB-Z])(\\s|,)",
     trigEngine = "ecma",
@@ -80,7 +87,7 @@ return {
     end,
   }, {
     f(function(_, snip)
-      return (snip.captures[1] .. snip.captures[2] .. "$" .. snip.captures[3] .. "$" .. snip.captures[4])
+      return (snip.captures[1] .. snip.captures[2] .. "\\(" .. snip.captures[3] .. "\\)" .. snip.captures[4])
     end),
   }),
 }

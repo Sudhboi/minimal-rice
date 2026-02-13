@@ -18,13 +18,13 @@ export PATH="$HOME/.clones/loogle/.lake/build/bin:$PATH"
 
 
 function k1() {
-    for ((i = 0.9 ; i <= 1.0 ; i = i + 0.02 )); do sleep 0.001 && kitty @ set-background-opacity $i; done
+    for ((i = 0.9 ; i <= 1.0 ; i = i + 0.05 )); do sleep 0.001 && kitty @ set-background-opacity $i; done
     sleep 0.001
     kitty @ set-background-opacity 1.0
 }
 
 function k9() {
-    for ((i = 1.0 ; i >= 0.9 ; i = i - 0.02 )); do sleep 0.001 && kitty @ set-background-opacity $i; done
+    for ((i = 1.0 ; i >= 0.9 ; i = i - 0.05 )); do sleep 0.001 && kitty @ set-background-opacity $i; done
     sleep 0.001
     kitty @ set-background-opacity 0.9
 }

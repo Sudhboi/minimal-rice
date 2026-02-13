@@ -11,7 +11,7 @@ binds {
     Ctrl+Space { spawn-sh "wlr-which-key"; }
 
     Mod+S { spawn-sh "/usr/bin/niri-sidebar toggle-window"; }
-    Mod+Shift+S { spawn-sh "/usr/bin/niri-sidebar toggle-visibility"; }
+    Mod+Shift+S { spawn-sh "/usr/bin/niri-sidebar toggle-visibility && niri msg action switch-focus-between-floating-and-tiling"; }
     Mod+Ctrl+S { spawn-sh "/usr/bin/niri-sidebar flip"; }
     Mod+Alt+R { spawn-sh "/usr/bin/niri-sidebar reorder"; }
 }
