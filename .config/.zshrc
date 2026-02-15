@@ -11,6 +11,7 @@ alias lg="lazygit"
 alias bat-info="cat /sys/class/power_supply/BAT0/uevent"
 alias dt="~/.backups/dotfiles/copy.sh"
 alias bruh="python3 ~/.bruh/bruh.py"
+alias wqa="pkill yazi"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"

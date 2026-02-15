@@ -1,6 +1,6 @@
 binds {
 
-    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn-sh "kitty --hold fastfetch"; }
     Mod+Z hotkey-overlay-title="Open a Browser: zen-browser" { spawn "zen-browser"; }
     Mod+D hotkey-overlay-title="Run an Application: vesktop" { spawn "vesktop"; }
     Mod+N hotkey-overlay-title="Open Notification Centre" { spawn-sh "swaync-client -t"; }
